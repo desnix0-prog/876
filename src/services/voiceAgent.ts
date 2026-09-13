@@ -5,7 +5,7 @@ import { useSystemStore } from "../store/systemStore";
 // Initialize Groq. Note: In a real production app, never expose your API key in the client side.
 // Since this is a local Web OS, we read from Vite's env vars.
 const groq = new Groq({
-  apiKey: import.meta.env.VITE_GROQ_API_KEY,
+  apiKey: import.meta.env.VITE_GROQ_API_KEY || "dummy_key_to_prevent_crash",
   dangerouslyAllowBrowser: true // Required for client-side use
 });
 
